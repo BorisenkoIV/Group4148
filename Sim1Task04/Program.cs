@@ -1,26 +1,3 @@
-﻿// Задача №5 Ввод натурального числа N.
-// Вывод на экран Целых чисел в диапазоне -N до +N
-Console.WriteLine("Задача № 5");
+﻿// Задача № 4
+Console.WriteLine("Задача № 4");
 
-Console.Write("Введите число: "); //Выводим запрос на ввод числа N
-
-//операционная система общается строками, поэтому int сразу не пишем!
-string? numLine = Console.ReadLine(); //Считываем данные с консоли
-
-if(numLine!=null)
-{
-    int numN = int.Parse(numLine);
-
-    int startNum = numN*(-1);
-
-    string res = string.Empty;
-    
-    while(startNum <= numN)
-    {
-        res = res + startNum + " ";
-        startNum++;
-    }
-
-    Console.WriteLine(res);
-
-}
