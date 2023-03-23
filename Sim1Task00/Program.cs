@@ -1,2 +1,2 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Начало семинара: Знакомство с языками программирования
+Console.WriteLine("Hello, Seminar!");
