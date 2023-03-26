@@ -1,7 +1,7 @@
 ﻿// Ввод - числового значения дня недели. Вывод - названия дня недели
 Console.WriteLine("Задача № 3");
 //start:
-Console.WriteLine("Введите день недели");
+Console.WriteLine("Введите числовое значение дня недели и нажмите Enter");
 string? dayLine = Console.ReadLine();
 
 if (dayLine != null)

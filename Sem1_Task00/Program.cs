@@ -1,6 +1,6 @@
 ﻿// Начало семинара: Знакомство с языками программирования.
-Console.WriteLine("Hello, Seminar!");
-
+// Вывод в терминал квадрата числа inLine 
+Console.WriteLine("Введите число и нажмите Enter");
 
 //Считываем данные с консоли
 string? inLine = Console.ReadLine();
@@ -11,12 +11,13 @@ if (inLine != null)
     //Парсим введенное число
     int inNumber = int.Parse(inLine);
 
-    //Находим квадрат числа
+    //Находим квадрат числа (первый метод)
     int outNumber = inNumber * inNumber;
+    // Второй метод нахождения квадрата числа (использование библиотеки)
     int outStrtPow = (int)Math.Pow(inNumber,2);
-
-    //int outNumberTest = inLine.ToCharArray()[0]*inLine.ToCharArray()[0];
-
+    // Если читать код введенного числа непосредственно из памяти (ASCII)
+    //int outNumberTest = inLine.ToCharArray()[0]*inLine.ToCharArray()[0]; 
+Console.WriteLine("Выводим квадрат введенного числа:");
     // Выводим данные в консоль 
     Console.WriteLine(outNumber);
     // Выводим данные в консоль 
