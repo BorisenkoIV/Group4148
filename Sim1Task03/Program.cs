@@ -1,9 +1,11 @@
 ﻿// Ввод числового значения дня недели. Вывод названия дня недели
 Console.WriteLine("Задача № 3");
+//start:
 Console.WriteLine("Введите день недели");
 string? dayLine = Console.ReadLine();
 
-if (dayLine != null) {
+if (dayLine != null)
+{
     string[] dayWeek = new string[7];
     dayWeek[0] = "Понедельник";
     dayWeek[1] = "Вторник";
@@ -15,9 +17,15 @@ if (dayLine != null) {
 
     int day = int.Parse(dayLine);
 
-    if ((0 < day) && (day < 8)) {
+    if ((0 < day) && (day < 8))
+    {
         Console.WriteLine(dayWeek[day-1]);
     }
-    else Console.WriteLine("Неправильный день недели");
+    else 
+        Console.WriteLine("Неправильный день недели");
 
 }
+//Console.WriteLine("Хотите продолжить? Нажмите - Y или любую клавишу для выхода из программы");
+//goto start;
+
+Environment.Exit(0);
