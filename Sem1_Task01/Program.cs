@@ -1,22 +1,24 @@
 ﻿// Вводим два числа и проверяем, является ли первое число квадратом второго
 Console.WriteLine("Задача № 1");
-//Выводим запрос на ввод с консоли первого числа:
-string? inLine = Console.ReadLine();
+Console.WriteLine("Введите последовательно два числа, после каждого числа нажимать Enter");
 
-//Проверяем, чтобы данные были не пустыми
-if (inLine != null)
+string? inLine1 = Console.ReadLine();
+string? inLine2 = Console.ReadLine();
+if ((inLine1 != null) && (inLine2 != null))
 {
-    //Парсим введенное число
-    int inNumber = int.Parse(inLine);
+    int inNumber1 = int.Parse(inLine1);
 
-    //Находим квадрат числа
-    int outNumber = inNumber * inNumber;
-    int outStrtPow = (int)Math.Pow(inNumber,2);
+    int inNumber2 = int.Parse(inLine2);
 
-    //int outNumberTest = inLine.ToCharArray()[0]*inLine.ToCharArray()[0];
+    int outNumber2 = inNumber2 * inNumber2;
 
-    // Выводим данные в консоль 
-    Console.WriteLine(outNumber);
-    // Выводим данные в консоль 
-    Console.WriteLine(outStrtPow);
+    if (outNumber2 == inNumber1)
+    {
+        Console.WriteLine("Да является");
+    }
+    else
+    {
+        Console.WriteLine("Не является");
+    }
+
 }
