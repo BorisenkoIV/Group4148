@@ -7,7 +7,8 @@ int inNumber1 = int.Parse(num[0]);
 int inNumber2 = int.Parse(num[1]);
 int inNumber3 = int.Parse(num[2]);
 
-/*
+/* Console.WriteLine("Введите последовательно три числа, после каждого числа нажимать Enter");
+
 string? inLine1 = Console.ReadLine();
 string? inLine2 = Console.ReadLine();
 string? inLine3 = Console.ReadLine();
@@ -39,5 +40,5 @@ else
     Console.WriteLine("\n Максимальное число: " + max);
 }
 End:
-Console.WriteLine("\n Финиш");
+Console.WriteLine(" Финиш");
 //}
