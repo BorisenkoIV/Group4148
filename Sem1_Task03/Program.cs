@@ -1,7 +1,10 @@
 ﻿// Ввод - числового значения дня недели. Вывод - названия дня недели
-Console.WriteLine("Задача № 3");
+Console.WriteLine("\n Задача № 3");
+Console.WriteLine(" Ввод - числового значения дня недели. Вывод - названия дня недели");
+
 //start:
-Console.WriteLine("Введите числовое значение дня недели и нажмите Enter");
+Console.WriteLine(" Введите числовое значение дня недели и нажмите Enter:");
+
 string? dayLine = Console.ReadLine();
 
 if (dayLine != null)
@@ -22,7 +25,7 @@ if (dayLine != null)
         Console.WriteLine(dayWeek[day-1]);
     }
     else 
-        Console.WriteLine("Неправильный день недели");
+        Console.WriteLine(" Неправильный день недели");
 
 }
 //Console.WriteLine("Хотите продолжить? Нажмите - Y или любую клавишу для выхода из программы");
@@ -30,4 +33,4 @@ if (dayLine != null)
 
 //goto start;
 
-Environment.Exit(0);
+//Environment.Exit(0);

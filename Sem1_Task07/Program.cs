@@ -1,18 +1,20 @@
-﻿// Задача № 7 Вывод на консоль последней цифры многозначного числа 
-Console.WriteLine("Задача № 7");
+﻿// Задача № 7 Вывод на консоль последней цифры многозначного числа
+
+Console.WriteLine("\n Задача № 7");
+Console.WriteLine(" Вывод на консоль последней цифры многозначного числа");
 
 //Выводим запрос на ввод трехзначного числа
-Console.Write("Введите трёхзначное число: ");
+Console.WriteLine(" Введите трёхзначное число:");
 //Считываем данные с консоли
 string? numLine = Console.ReadLine(); 
 
 if(numLine!=null)
 {
-    // char[] charArr = numLine.ToCharArray();
-   // Console.WriteLine(charArr[charArr.Line-1]);
+                 // char[] charArr = numLine.ToCharArray();
+                // Console.WriteLine(charArr[charArr.Line-1]);
     int num = int.Parse(numLine);
     int res = num % 10;
 
-    Console.Write("Последняя цифра введённого числа: ");
-    Console.Write(res);
+    Console.Write("Последняя цифра введённого числа:\n"+ res);
+    //Console.Write(res);
 }

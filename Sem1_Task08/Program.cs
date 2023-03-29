@@ -1,23 +1,35 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Задача № 8. Ввод натурального числа N. Вывод всех четных чисел от 1 до N.
+Console.WriteLine("\n Задача № 8");
+Console.WriteLine(" Ввод натурального числа N. Вывод всех четных чисел от 1 до N.");
 
-string? inLine1 = Console.ReadLine();
-string? inLine2 = Console.ReadLine();
-if ((inLine1 != null) && (inLine2 != null))
+//Выводим запрос на ввод числа N:
+Console.WriteLine(" Введите число и нажмите Enter:");
+
+
+//Считываем данные с консоли:
+string? numLine = Console.ReadLine(); 
+
+if (numLine != null)
 {
-    int inNumber1 = int.Parse(inLine1);
-
-    int inNumber2 = int.Parse(inLine2);
-
-    int outNumber2 = inNumber2 * inNumber2;
-
-    if (outNumber2 == inNumber1)
+    int numN = int.Parse(numLine);
+    if (numN > 1)
     {
-        Console.WriteLine("Да является");
+        int startNum = 2;
+
+        // Создаем строковую переменную res, в которую будем добавлять новые значения:
+        string res = string.Empty; //Empty - пуская строка
+
+        // В цыкле добавляем четные числа в строковую переменную:
+        while (startNum <= numN)
+        {
+            res = res + startNum + " ";
+            startNum = startNum + 2;
+        }
+        // Выводим в консоль результат:
+        Console.WriteLine(res);
     }
     else
     {
-        Console.WriteLine("Не является");
+        Console.Write(" Введите число > 1 и повторите ввод");
     }
-
 }

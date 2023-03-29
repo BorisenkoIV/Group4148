@@ -1,44 +1,27 @@
-﻿// See
-Console.WriteLine("Введите три числа разделенных одним пробелом и нажмите Enter");
+﻿
+/* Задача № 6 Прием на входе числа и вывод на консоль - является ли это число
+ четным и делится ли оно на два без остатка*/
+  
+Console.WriteLine ("\n Задача № 6");
+Console.WriteLine (" Ввод целого числа. Вывод результата анализа на четность и остаток от деления на два");
 
-/*string[] num = Console.ReadLine().Split(' ');
-int a = int.Parse(num[0]);
-int b = int.Parse(num[1]);
-int c = int.Parse(num[2]);
-*/
+//Выводим запрос на ввод числа
+Console.WriteLine(" Введите целое число и нажмите Enter:");
+//Считываем данные с консоли
+string? numLine = Console.ReadLine();
 
-string? inLine1 = Console.ReadLine();
-string? inLine2 = Console.ReadLine();
-string? inLine3 = Console.ReadLine();
-
-if ((inLine1 != null) && (inLine2 != null) && (inLine3 != null))
+if (numLine != null)
 {
-    int inNumber1 = int.Parse(inLine1);
-    int inNumber2 = int.Parse(inLine2);
-    int inNumber3 = int.Parse(inLine3);
-
-    if (inNumber1 > inNumber2)
+    // char[] charArr = numLine.ToCharArray();
+    // Console.WriteLine(charArr[charArr.Line-1]);
+    int num = int.Parse(numLine);
+    int res = num %2;
+    if (res == 0)
     {
-        int max = inNumber1;
-
-        if (inNumber1 > inNumber3)
-        {
-           Console.WriteLine("\n Максимальное число: " + max);
-           goto End;
-        }
-    }
-    if (inNumber2 > inNumber3)
-    {
-        int max = inNumber2;
-        Console.WriteLine("\n Максимальное число: " + max);
+        Console.Write("Введенное число: " + num + " четное");
     }
     else
     {
-    int max = inNumber3;
-    Console.WriteLine("\n Максимальное число: " + max);
+        Console.Write("Введенное число: " + num + " делится на два с остатком");
     }
-End:
-    Console.WriteLine("Финиш");
 }
-
-
