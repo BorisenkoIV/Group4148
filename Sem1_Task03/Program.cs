@@ -25,7 +25,7 @@ if (dayLine != null)
         Console.WriteLine(dayWeek[day-1]);
     }
     else 
-        Console.WriteLine(" Неправильный день недели");
+        Console.WriteLine("Неправильный день недели");
 
 }
 //Console.WriteLine("Хотите продолжить? Нажмите - Y или любую клавишу для выхода из программы");

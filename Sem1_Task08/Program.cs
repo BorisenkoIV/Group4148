@@ -30,6 +30,6 @@ if (numLine != null)
     }
     else
     {
-        Console.Write(" Введите число > 1 и повторите ввод");
+        Console.Write("Введите число > 1 и повторите ввод");
     }
 }

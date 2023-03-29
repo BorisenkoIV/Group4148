@@ -15,12 +15,12 @@ if ((inLine1 != null) && (inLine2 != null))
     int min = inNumber2;
     if (inNumber1 > inNumber2)
     {
-        Console.WriteLine(" Максимальное число: " + max);
-        Console.WriteLine(" Минимальное число: " + min);
+        Console.WriteLine("Максимальное число: " + max);
+        Console.WriteLine("Минимальное число: " + min);
     }
     else
     {
-        Console.WriteLine(" Максимальное число: " + min);
-        Console.WriteLine(" Минимальное число: " + max);
+        Console.WriteLine("Максимальное число: " + min);
+        Console.WriteLine("Минимальное число: " + max);
     }
 }
