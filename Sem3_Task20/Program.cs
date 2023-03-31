@@ -1,8 +1,5 @@
-﻿using System;
-
-class Program
-{
-    static void Main(string[] args)
+﻿
+        static void Main(string[] args)
     {
         // Запрос координат первой точки
         Console.WriteLine("Введите координаты первой точки:");
@@ -24,4 +21,3 @@ class Program
         // Вывод результата
         Console.WriteLine("Расстояние между двумя точками: {0}", distance);
     }
-}
