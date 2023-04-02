@@ -1,5 +1,4 @@
-﻿
-// Задача № 22 
+﻿// Задача № 22 Вывести квадраты целых чисел в диапазоне от 1 до N.
 // Универсальный метод
 
 int ReadData(string message)
@@ -13,12 +12,11 @@ string LineGen(int num, int pow)
     string res = "";
     for (int i = 1; i <= num; i++)
     {
-        res += Math.Pow(i, pow) + " ";
-        return res;
+        res += Math.Pow(i, pow) + "\t";
     }
+    return res;
 }
-numN= ReadData("Bведите чило N: ");
+int numN = ReadData("Bведите чило N: ");
 Console.WriteLine(LineGen(numN, 1));
 Console.WriteLine(LineGen(numN, 2));
-//Console.WriteLine(LineGen(numN,3));
-
+Console.WriteLine(LineGen(numN, 3));

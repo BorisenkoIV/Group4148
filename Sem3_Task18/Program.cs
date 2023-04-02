@@ -40,6 +40,3 @@ void PrintAnswer(int quoter)
 //вызовы методов
 int quoter = ReadData("Введите четверть: ");
 PrintAnswer(quoter);
-
-
-
