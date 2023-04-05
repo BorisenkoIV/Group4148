@@ -34,3 +34,4 @@ else
     Console.WriteLine(" Это не день недели!");
     goto start;
 }
+

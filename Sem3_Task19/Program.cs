@@ -1,45 +1,30 @@
-﻿// Задача № 19 Вводим пятизначное целое число, проверяем является ли введенное число Полидромом? 
+﻿// Задача № 19 Вводим пятизначное целое число, проверяем является ли введенное число Палидром? 
 // Проверяем количество символов в строке:
 
-Console.WriteLine("\n Задача № 19");
-Console.WriteLine(" Проверяем является ли введенное число Полидромом?");
-Console.WriteLine(" Введите пятизначное целое число: ");
+Console.WriteLine("\nЗадача № 19 (метод)");
+Console.WriteLine("  Проверяем является ли введенное число Палидром?");
+int numLine = ReadData("  Введите пятизначное число: ");
 
-string? numLine = Console.ReadLine();
-// Проверяем количество символов в строке:
-if (numLine != null && (numLine.Length == 5))
+bool num = PalTest(numLine);
+
+// Метод чтения данных с консоли:
+int ReadData(string mess)
 {
-    // Для контроля выводим на консоль:
-    Console.WriteLine(" Количество цифр введенного числа: {0}", numLine.Length);
+    Console.WriteLine(mess);
+    int res = int.Parse(Console.ReadLine() ?? "0");
+    return res;
 }
 
- int num = int.Parse(Console.ReadLine());
-           Console.WriteLine(PalTest(num));
-            Console.ReadKey(true);
-
-
-
-bool PalTest(int nam)
+// Метод проверки числа на Палидром:
+bool PalTest(int num)
 {
     bool res = false;
     int D1 = num / 10000;
     int D5 = num % 10;
-    int D2 = (num / 10000) % 10;
+    int D2 = (num / 1000) % 10;
     int D4 = (num / 10) % 10;
     if (D1 == D5 && D2 == D4)
-        return res;
+        res = true;
+    Console.WriteLine("Результат: " + res);
+    return res;
 }
-
-/*
-bool PalTest(int nam)
-{
-    bool res = false;
-    int D1 = num / 10000;
-    int D5 = num % 10;
-    int D2 = (num / 10000) % 10;
-    int D4 = (num / 10) % 10;
-    if (D1 == D5 && D2 == D4)
-        return res;
-}
-//return res;
-*/
