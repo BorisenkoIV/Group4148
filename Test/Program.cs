@@ -36,29 +36,30 @@
 
 // // 		Console.WriteLine(n);
 // // 		Console.WriteLine(isNumeric);
+// Задача № 22 Вывести квадраты (кубы) целых чисел в диапазоне от 1 до N.
+// Универсальный метод
 
- int num = int.Parse(Console.ReadLine() ?? "0");
- int D1 = (num / 1000)*100;
- int D4 = (num / 10)%10*10;
- int D5 = num % 10;
- int namber=(D1+D4+D5);
- Console.WriteLine(D1+D4+D5);
-
-Dictionary<int, int> FillPalindroms()
+int ReadData(string message)
 {
-  Dictionary<int, int> palindroms = new Dictionary<int, int>();
-
-    // Цикл внутри цикла, заполняющих значения словаря палиндромов
-    for (int i = 1; i < 10; i++)
-    {
-        for (int j = 0; j < 10; j++)
-        {
-            int key = j * 10 + i;
-            int value = i * 1000 + j * 100 + j * 10 + i;
-            palindroms.Add(key, value);
-        }
-        return palindroms;
-    }
-    // Проверяем количество элементов в словаре:
-    Console.WriteLine($"Count: {palindroms.Count}");
+    Console.WriteLine(message);
+    int res = int.Parse(Console.ReadLine() ?? "0");
+    return res;
 }
+string LineGen(int num, int pow)
+{
+    string res = "";
+    for (int i = 1; i <= num; i++)
+    {
+        res += Math.Pow(i, pow) + "\t |";
+    }
+    return res;
+}
+int numN = ReadData("  Bведите чило N:");
+Console.WriteLine("------------------------------------------");
+//Console.WriteLine("|--------|-------|-------|-------|-------|");
+Console.WriteLine("|"+LineGen(numN, 1));
+Console.WriteLine("|--------|-------|-------|-------|-------|");
+Console.WriteLine("|"+LineGen(numN, 2));
+Console.WriteLine("|--------|-------|-------|-------|-------|");
+Console.WriteLine("|"+LineGen(numN, 3));
+Console.WriteLine("------------------------------------------");
