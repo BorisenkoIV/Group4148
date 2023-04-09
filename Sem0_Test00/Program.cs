@@ -9,11 +9,11 @@
 //     {
 //         cube = (int)Math.Pow(i, pow);
 
-//         resLine = resLine + ((pow == 3) ? cube.ToString() : ((i).ToString()).PadRight((int)Math.Logl0(cube) + 1)) + "\u2551";
+//         resLine = resLine + ((pow == 3) ? cube.ToString() : ((i).ToString()).PadRight((int)Math.Log10(cube) + 1)) + "\u2551";
 //     }
 //     return resLine;
 // }
-// string firstStr = LineBilder(topNum, l, "\u2551 Число:	\u2551");
+// string firstStr = LineBilder(topNum, 1, "\u2551 Число:	\u2551");
 
 // int TakeData(string msg)
 // { //метод считывающий целое число из консоли, выводя в неё сообщение Console.Write(msg);

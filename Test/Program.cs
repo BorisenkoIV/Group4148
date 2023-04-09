@@ -39,27 +39,94 @@
 // Задача № 22 Вывести квадраты (кубы) целых чисел в диапазоне от 1 до N.
 // Универсальный метод
 
-int ReadData(string message)
-{
-    Console.WriteLine(message);
-    int res = int.Parse(Console.ReadLine() ?? "0");
-    return res;
-}
-string LineGen(int num, int pow)
-{
-    string res = "";
-    for (int i = 1; i <= num; i++)
-    {
-        res += Math.Pow(i, pow) + "\t |";
-    }
-    return res;
-}
-int numN = ReadData("  Bведите чило N:");
-Console.WriteLine("------------------------------------------");
-//Console.WriteLine("|--------|-------|-------|-------|-------|");
-Console.WriteLine("|"+LineGen(numN, 1));
-Console.WriteLine("|--------|-------|-------|-------|-------|");
-Console.WriteLine("|"+LineGen(numN, 2));
-Console.WriteLine("|--------|-------|-------|-------|-------|");
-Console.WriteLine("|"+LineGen(numN, 3));
-Console.WriteLine("------------------------------------------");
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 
+
+
+// // Инициализация массива строк
+//       string[] daysOfWeek = { "Sunday", "Monday", "Tuersday","Wednesday", "Thirsday", "Friday", "Saturday" };
+
+//       // Вывод массива строк AS в цикле
+//       for (int i = 0; i < daysOfWeek.Length; i++)
+//         Console.WriteLine("AS[{0}] = {1}", i, daysOfWeek[i]);
+//       Console.ReadKey();
+
+
+
+// // Ввод строк с клавиатуры
+//       // и образование нового массива
+
+//       // 1. Объявление переменных
+//       string[] AS; // ссылка на массив строк
+//       int count; // текущее количество строк в массиве
+//       string s;
+//       string[] AS2; // дополнительная переменная-ссылка - сохраняет старый массив строк
+
+//       // 2. Цикл ввода строк
+//       Console.WriteLine("Enter strings:");
+
+//       count = 0; // обнулить количество строк
+//       AS = new string[count]; // выделить память для 0 строк
+
+//       do
+//       {
+//         // Ввести строку
+//         s = Console.ReadLine();
+
+//         // Проверка, пустая ли строка
+//         if (s!="")
+//         {
+//           // если строка не пустая, то добавить строку в массив
+//           count++;
+
+//           // предварительно выделить память для нового массива
+//           // в котором на 1 элемент больше
+//           AS2 = new string[count];
+
+//           // скопировать старый массив в новый
+//           for (int i = 0; i < AS2.Length - 1; i++)
+//             AS2[i] = AS[i];
+
+//           // добавить последнюю введенную строку в массив AS2
+//           AS2[count - 1] = s;
+
+//           // Освобождать память, предварительно выделенную под AS не нужно,
+//           // этим занимается сборщик мусора
+
+//           // перенаправить ссылку AS на AS2
+//           AS = AS2;
+//         }
+//       } while (s != "");
+
+//       // 3. Вывод массива строк AS в цикле
+//       for (int i = 0; i < AS.Length; i++)
+//         Console.WriteLine("AS[{0}] = {1}", i, AS[i]);
+//       Console.ReadKey();
+
+
+
+
+
+string[] str = { "Это", "очень", "простой", "тест." };
+		Console.WriteLine("Исходный массив: ");
+		for(int i=0; i < str.Length; i++)
+			Console.Write(str[i] + " ");
+		Console.WriteLine("\n");
+		// Изменить строку.
+		str[1] = "тоже";
+		str[3] = "до предела тест!";
+		Console.WriteLine("Видоизмененный массив: ");
+		for(int i=0; i < str.Length; i++)
+			Console.Write(str[i] + " ");
