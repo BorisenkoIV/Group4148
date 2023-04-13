@@ -1,0 +1,30 @@
+﻿//Задача 39
+/* Даны три отреза: а, ь, с. Проверить существование
+треугольника с такими сторонами?*/
+
+//Ввод данных
+int ReadData(string msg)
+{
+    Console.Write(msg);
+    int res = int.Parse(Console.ReadLine() ?? "0");
+    return res;
+}
+
+//Метод проверки существования треугольника
+void Triangle(int a, int b, int c)
+{
+    if(a< (b+c) && b<(a+c)&&c<(a+b))
+    {
+        Console.WriteLine("Треугольник существует");
+    }
+    else
+    {
+        Console.WriteLine("Треугольник не существует");
+    }
+}
+//задаём стороны
+int a = ReadData("Введите первую сторону: ");
+int b = ReadData("Введите вторую сторону: ");
+int c = ReadData("Введите третью сторону: ");
+//проверяем
+Triangle(a,b,c);
