@@ -6,12 +6,12 @@ Console.WriteLine("Задача № 36");
 Console.WriteLine("Вывод суммы элементов, стоящих на нечётных позициях в массиве:");
 
 // Метод ввод числа:
-int ReadData(string msg)
-{
-    Console.Write(msg);
-    int res = int.Parse(Console.ReadLine() ?? "0");
-    return res;
-}
+// int ReadData(string msg)
+// {
+//     Console.Write(msg);
+//     int res = int.Parse(Console.ReadLine() ?? "0");
+//     return res;
+// }
 
 // Метод печати одномерного массива:
 void Print1Darray(int[] arr)

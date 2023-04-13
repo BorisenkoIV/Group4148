@@ -48,7 +48,7 @@ int EvenCount(int[] arr)
             res++;
         }
     }
-    Console.WriteLine("Количество всех четных чисел в массиве:");
+    Console.WriteLine("\nКоличество всех четных чисел в массиве:");
     return res;
 }
 
