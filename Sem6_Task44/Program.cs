@@ -46,8 +46,8 @@ string FibNum(int num)
 
     for (int i = 2; i <= num; i++)
     {
-        res = res + " " + (first + last);
-        (first, last) = (last, last + first);
+        res += " " + (first + last);
+        (first, last) = (last,first+ last);
     }
     //i=2
     //res = 0 1 1
@@ -58,10 +58,6 @@ string FibNum(int num)
     //i=4
     //res = 0 1 1 2 3
     // (first, last) 2 3
-
-
-
-
     return res;
 }
 

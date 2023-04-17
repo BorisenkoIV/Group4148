@@ -43,3 +43,35 @@
 //     Console.WriteLine(stopSym); //рисуем правый верхний угол таблицы
 // }
 
+// int[,] matrix = new int[5, 5];
+// for (int i = 0; i < 5; i++)
+// {
+//     for (int j = 0; j < 5; j++)
+//     {
+//         matrix[i, j] = i * 5 + j + 1;
+
+//         bool flag = true;
+//         for (int k = 2; k < (i * 5 + j + 1) - 1; k++)
+//         {
+//             if (((i * 5 + j + 1) % k) == 0)
+//             {
+//                 flag = false;
+//                 break;
+//             }
+//         }
+//         if (flag)
+//         {
+//             Console.ForegroundColor = ConsoleColor.Red;
+//             Console.Write(i * 5 + j + 1 + "\t");
+//             Console.ResetColor();
+//         }
+//         else
+//         {
+//             Console.Write(i * 5 + j + 1 + "\t");
+//         }
+
+//     }
+//     Console.WriteLine();
+//     //Console.ReadLine();
+// }
+

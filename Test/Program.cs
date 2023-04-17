@@ -1,115 +1,212 @@
 ﻿
-Console.WriteLine("\nЗадача № 38");
-Console.WriteLine("Вывод разности между максимальным и минмальным значением в вещественном массиве:");
+// Console.WriteLine("\nЗадача № 38");
+// Console.WriteLine("Вывод разности между максимальным и минмальным значением в вещественном массиве:");
 
-// Генерация вещественного одномерного массива:
-double[] Gen1DArrDouble(int len, int min, int max)
+// // Генерация вещественного одномерного массива:
+// double[] Gen1DArrDouble(int len, int min, int max)
+// {
+//     double[] arr = new double[len];
+//     for (int i = 0; i < len; i++)
+//     {
+//         arr[i] = new Random().Next(min, max + 1) + new Random().NextDouble();
+//     }
+//     Console.Write("\nРазность между Мак и Мин значением в вещественном массиве: ");
+//     Console.WriteLine("{0:0.00}", arr.Max()- arr.Min());
+//     return arr;
+// }
+
+// // Cортировка методом Подсчета:
+// double CountingSort(double[] arr)
+// {
+//    double max = arr.Max();
+//     double min = arr.Min();
+//    // Console.WriteLine(arr.Max()-arr.Min());
+
+//     double[] count = new double[max - min + 1];
+//     double z = 0;
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         double count[arr[i] - min]++;
+//     }
+//     for (int i = min; i <= max; i++)
+
+//         while (count[i - min]-- > 0)
+//         {
+//             arr[z] = i;
+//             z++;
+//         }
+// }
+
+
+
+// double [] tstArray = CountingSort();
+// // Print1DArr(testArray);
+// CountingSort(tstArray);
+
+// /* Метод, выводящий на печать вещественный массиа
+//    с округлением до двух знаков после запятой: */
+// void Print1DArrOO(double[] arr)
+// {
+//     Console.Write("[");
+
+//     for (int i = 0; i < arr.Length - 1; i++)
+//     {
+//         // выведет два знака после запятой
+//         Console.Write("{0:0.00}", arr[i]);
+//         Console.Write("; ");
+//     }
+//     Console.Write("{0:0.00}", arr[arr.Length - 1]);
+//     Console.WriteLine("]");
+
+// }
+
+
+// // // поиск позиции (индекса), содержащего максимальное значение
+// // //float B[30];
+// // double FindMaxDouble(double[] tstArray)
+// // double max; // переменная, содержащая максимум
+// // int index; // позиция элемента, содержащего максимальное значение
+// // int i; // дополнительная переменная
+// // // поиск максимума
+// // // установить максимум как 1-й элемент массива
+// // index = 0;
+// // max = tstArray[0];  //max = B[0]; 
+// // for (i = 1; i < 30; i++)
+// //     if (max < tstArray[i])    //B[i]) 
+// //     {
+// //         max = tstArray[i]; //B[i]; // запомнить максимум
+// //         index = i;  // запомнить позицию максимального элемента
+// //     }
+// // return res;
+
+
+
+
+
+
+// double[] testArray = Gen1DArrDouble(11, 100, 1000);
+// Print1DArrOO(testArray);
+// //CountingSort(testArray);
+// //Print1DArrOO(testArray);
+// //double[] tstArray =FindMaxDouble()
+
+
+
+//Метод ввода 
+int ReadData(string msg)
 {
-    double[] arr = new double[len];
-    for (int i = 0; i < len; i++)
+    Console.Write(msg);
+    int res = int.Parse(Console.ReadLine() ?? "0");
+    return res;
+}
+
+
+
+//Метод заполнение массива
+int[,] Gen2DArray(int countRow, int countColumn, int but, int top)
+{
+
+    //Защита от дурака
+    int[,] arr = new int[countRow, countColumn];
+    for (int i = 0; i < countRow; i++)
     {
-        arr[i] = new Random().Next(min, max + 1) + new Random().NextDouble();
+        for (int j = 0; j < countRow; j++)
+        {
+            arr[i, j] = new Random().Next(but, top + 1);
+        }
+
     }
-    Console.Write("\nРазность между Мак и Мин значением в вещественном массиве: ");
-    Console.WriteLine("{0:0.00}", arr.Max()- arr.Min());
     return arr;
 }
 
-// Cортировка методом Подсчета:
-double CountingSort(double[] arr)
+
+
+
+
+//Метод печати 2 мерного массива 
+void Print2DArray(int[,] arr)
 {
-   double max = arr.Max();
-    double min = arr.Min();
-   // Console.WriteLine(arr.Max()-arr.Min());
-
-    double[] count = new double[max - min + 1];
-    double z = 0;
-    for (int i = 0; i < arr.Length; i++)
+    // ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Black,ConsoleColor.Blue,ConsoleColor.Cyan,
+    //                                     ConsoleColor.DarkBlue,ConsoleColor.DarkCyan,ConsoleColor.DarkGray,
+    //                                     ConsoleColor.DarkGreen,ConsoleColor.DarkMagenta,ConsoleColor.DarkRed,
+    //                                     ConsoleColor.DarkYellow,ConsoleColor.Gray,ConsoleColor.Green,
+    //                                     ConsoleColor.Magenta,ConsoleColor.Red,ConsoleColor.White,
+    //                                     ConsoleColor.Yellow};
+    for (int i = 0; i < arr.GetLength(0); i++) //GetLength - до конца строки/столбца
     {
-        double count[arr[i] - min]++;
-    }
-    for (int i = min; i <= max; i++)
-
-        while (count[i - min]-- > 0)
+        for (int j = 0; j < arr.GetLength(1); j++)
         {
-            arr[z] = i;
-            z++;
+            Console.ForegroundColor = ConsoleColor.Green; //col[new Random().Next(0,16)];
+            Console.Write(arr[i, j] + " ");
+            Console.ResetColor();
         }
-}
-
-
-
-double [] tstArray = CountingSort();
-// Print1DArr(testArray);
-CountingSort(tstArray);
-
-/* Метод, выводящий на печать вещественный массиа
-   с округлением до двух знаков после запятой: */
-void Print1DArrOO(double[] arr)
-{
-    Console.Write("[");
-
-    for (int i = 0; i < arr.Length - 1; i++)
-    {
-        // выведет два знака после запятой
-        Console.Write("{0:0.00}", arr[i]);
-        Console.Write("; ");
+        Console.WriteLine();
     }
-    Console.Write("{0:0.00}", arr[arr.Length - 1]);
-    Console.WriteLine("]");
-
 }
 
 
-// // поиск позиции (индекса), содержащего максимальное значение
-// //float B[30];
-// double FindMaxDouble(double[] tstArray)
-// double max; // переменная, содержащая максимум
-// int index; // позиция элемента, содержащего максимальное значение
-// int i; // дополнительная переменная
-// // поиск максимума
-// // установить максимум как 1-й элемент массива
-// index = 0;
-// max = tstArray[0];  //max = B[0]; 
-// for (i = 1; i < 30; i++)
-//     if (max < tstArray[i])    //B[i]) 
+// //Метод печати 2 мерного массива 
+// void Print2DArray(int[,] arr)
+// {
+//     ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Black,ConsoleColor.Blue,ConsoleColor.Cyan,
+//                                         ConsoleColor.DarkBlue,ConsoleColor.DarkCyan,ConsoleColor.DarkGray,
+//                                         ConsoleColor.DarkGreen,ConsoleColor.DarkMagenta,ConsoleColor.DarkRed,
+//                                         ConsoleColor.DarkYellow,ConsoleColor.Gray,ConsoleColor.Green,
+//                                         ConsoleColor.Magenta,ConsoleColor.Red,ConsoleColor.White,
+//                                         ConsoleColor.Yellow};
+//     for (int i = 0; i < arr.GetLength(0); i++) //GetLength - до конца строки/столбца
 //     {
-//         max = tstArray[i]; //B[i]; // запомнить максимум
-//         index = i;  // запомнить позицию максимального элемента
+//         for(int j=0; j < arr.GetLength(1); j++)
+//         {
+//             Console.ForegroundColor = col[new Random().Next(0,16)];
+//             Console.Write(arr[i,j]+" ");
+//             Console.ResetColor();
+//         }
+//         Console.WriteLine();
 //     }
-// return res;
+// }
+
+
+// int row = ReadData("Введите кол-во строк: ");
+// int col = ReadData("Введите кол-во столбцов: ");
+// int[,] arr2D = Gen2DArray(row, col, 10, 99);
+// //int[,] arr = FillNM2DArr(arr2D);
+// Print2DArray(arr2D);
 
 
 
+// Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет
+// Console.WriteLine("...");
+// Console.ResetColor(); // сбрасываем в стандартный
 
-
-
-double[] testArray = Gen1DArrDouble(11, 100, 1000);
-Print1DArrOO(testArray);
-//CountingSort(testArray);
-//Print1DArrOO(testArray);
-//double[] tstArray =FindMaxDouble()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+int[,] matrix = new int[10, 12];
+            for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 12; j++)
+                {
+                    matrix[i, j] = i * 12 + j + 1;
+                    
+                    bool flag=true;
+                    for (int w = 2; w < (i * 12 + j + 1)-1; w++) 
+                    {
+                        if (((i * 12 + j + 1) % w) == 0)
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(i * 12 + j + 1);
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.WriteLine(i * 12 + j + 1);
+                    }
+                     
+                }
+            Console.ReadLine();
 
 
 
