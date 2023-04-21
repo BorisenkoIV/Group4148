@@ -1,5 +1,6 @@
 ﻿// // Задача №49
-// // Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле: Aₘₙ = m+n. Выведите полученный массив на экран.
+// // Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле: Aₘₙ = m+n. 
+//Выведите полученный массив на экран.
 
 // Console.Clear();
 
@@ -161,13 +162,13 @@ void Print2DArray(int[,] arr)
 
 int row = ReadData("Введите кол-во строк: ");
 int col = ReadData("Введите кол-во столбцов: ");
-int[,] arr2D = Gen2DArray(row, col, 10, 99);
+int[,] arr2D = Gen2DArray(row, col, 1, 10);
 
-DateTime d1 = DateTime.Now;
+//DateTime d1 = DateTime.Now;
 int[,] arr2DNew = SquareOfEvenIndices(arr2D);
-Console.WriteLine(DateTime.Now-d1);
-DateTime d2 = DateTime.Now;
+//Console.WriteLine(DateTime.Now-d1);
+//DateTime d2 = DateTime.Now;
 FillArrayMod2Square(arr2D);
-Console.WriteLine(DateTime.Now-d2);
-//Print2DArray(arr2D);
-//Print2DArray(arr2DNew);
+//Console.WriteLine(DateTime.Now-d2);
+Print2DArray(arr2D);
+Print2DArray(arr2DNew);

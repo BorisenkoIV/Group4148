@@ -1,10 +1,10 @@
-﻿/* Задача 47 
-  Задать двумерный массив размером m×n, заполненный случайными вещественными числами.*/
+﻿/* Задача 47*(hard)
+  Задать двумерный массив размером m×n, заполненный случайными вещественными числами.
+  При выводе матрицы показывать каждую цифру разного цвета */
 
 Console.Clear();
-Console.WriteLine("  Задача № 47");
-Console.WriteLine("  Генерация массива, случайными вещественными числами:\n");
-
+Console.WriteLine("  Задача № 47hard");
+Console.WriteLine("  Раскрасить каждую цифру вещественного числа:\n");
 
 // Метод генерации массива, заполненного случайными вещественными числами:
 double[,] Gen2Darray(int countRow, int countColum, int minValue, int maxValue)
@@ -33,12 +33,13 @@ void Print2DArray(double[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            char[] numbers = arr[i, j].ToString().ToCharArray();
-            for (int k = 0; k < numbers.Length; k++)
+            // Преобразовать вещественное число в строку:
+            char[] numbers = arr[i,j].ToString().ToCharArray();
+            for(int k =0;k<numbers.Length;k++)
             {
-                Console.ForegroundColor = ConsoleColor.Green; //col[new Random().Next(0, 16)];
-                Console.Write(numbers[k]);
-                Console.ResetColor();
+            Console.ForegroundColor = col[new Random().Next(0, 16)];
+            Console.Write(numbers[k]);
+            Console.ResetColor();
             }
             Console.Write("\t");
         }
@@ -46,5 +47,6 @@ void Print2DArray(double[,] arr)
     }
 }
 
-double[,] matr = Gen2Darray(5, 3, 0, 100);
+// Вывод результата:
+double[,] matr = Gen2Darray(5,3,0,100);
 Print2DArray(matr);

@@ -13,7 +13,7 @@ int ReadData(string line)
     return number;
 }
 
-// Метод, генерирующий массив
+// Метод генерирации 2х-мерного массива целых чисел:
 int[,] Gen2Darray(int countRow, int countColumn, int minValue, int maxValue)
 {
     int[,] arr = new int[countRow, countColumn];
@@ -27,65 +27,29 @@ int[,] Gen2Darray(int countRow, int countColumn, int minValue, int maxValue)
     return arr;
 }
 
-void Print2Darray(int[,] arr)
+// Метод вывода на печать 2х-мерного массива:
+void Print2DarrColor(int[,] arr, int x, int y)
 {
-    // ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Black,ConsoleColor.Blue,ConsoleColor.Cyan,
-    //                                     ConsoleColor.DarkBlue,ConsoleColor.DarkCyan,ConsoleColor.DarkGray,
-    //                                     ConsoleColor.DarkGreen,ConsoleColor.DarkMagenta,ConsoleColor.DarkRed,
-    //                                     ConsoleColor.DarkYellow,ConsoleColor.Gray,ConsoleColor.Green,
-    //                                     ConsoleColor.Magenta,ConsoleColor.Red,ConsoleColor.White,
-    //                                     ConsoleColor.Yellow};
-    // int row;
-    // int col;
-
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            //             if (int i == int j)
-            //             {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(arr[i, j] + " ");
-            Console.ResetColor();
-            // }
+            if (i == x && j == y)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(arr[x, y] + " ");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(arr[i, j] + " ");
+                Console.ResetColor();
+            }
         }
         Console.WriteLine();
     }
 }
-
-
-//     Console.ForegroundColor = ConsoleColor.Green;
-// Console.Write(arr[i, j] + " ");
-// Console.ResetColor();
-// }
-// Console.WriteLine();
-//     }
-//     // Console.ForegroundColor = ConsoleColor.Yellow;
-//     // Console.Write(arr[5, 5]);
-//     // Console.ResetColor();
-
-// //Метод печати 2мерного массива 
-// void Print2Darray(int[,] arr)
-// {
-//     for (int i = 0; i < arr.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < arr.GetLength(1); j++)
-//         {
-//             // if (i == j)
-//             // {
-//             //     Console.ForegroundColor = ConsoleColor.Yellow;
-//             //     Console.Write(arr[i, j] + " ");
-//             //     Console.ResetColor();
-//             // }
-
-//             Console.Write(arr[i, j] + " ");
-//         }
-//         Console.WriteLine();
-//     }
-
-// }
-
-
 
 void FindElm(int[,] arr2D, int row, int col)
 {
@@ -101,53 +65,15 @@ void FindElm(int[,] arr2D, int row, int col)
         Console.WriteLine(arr2D[row, col]);
               //arr2D[row, col]=arr2D[row, col];
         Console.ResetColor();
-        Print2Darray(arr2D);
+        //Print2Darray(arr2D);
         //return;
     }
 }
 
+// Ввод даных для поиска элемента в массиве:
 int[,] arr2D = Gen2Darray(10, 10, 10, 99);
-int row = ReadData("Введите номер строки двухмерного массива: ");
-int col = ReadData("Введите номер элемента в строке двухмерного массива: ");
+int row = ReadData("Введите номер строки отыскиваемого элемента: ");
+int col = ReadData("Введите позицию в строке отыскиваемого элемента: ");
 FindElm(arr2D, row, col);
-int x = row;
-int y = col;
-//rint2Darray(arr2D);
+Print2DarrColor(arr2D, row, col);
 
-//FindElm(arr2D, row, col);
-
-
-//Метод построения чисел фибаначи
-string FibNum(int num)
-{
-    string res = "0 1";
-    long first = 0;
-    long last = 1;
-
-    for (int i = 2; i <= num; i++)
-    {
-        res = res + " " + (first + last);
-        (first, last) = (last, last + first);
-    }
-    return res;
-}
-
-
-string res = "";
-int n = ReadData("Введите n");
-res = FibNum(n);
-Console.WriteLine(res);
-
-
-
-
-
-// int[,] arr2D = Gen2DArray(row, col, 10, 99);
-
-// // Вывод результата:
-// int[] arr = Gen1DArray(lenArr, 100, 999);
-// Console.WriteLine("Неотсортированный массив:");
-
-//Print1Darray(arr);
-
-//Priny2DArray(arr2D);

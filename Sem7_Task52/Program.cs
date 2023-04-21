@@ -1,10 +1,9 @@
 ﻿/* Задача № 52*(hard)
    Задать двумерный массив размером m×n, заполненный случайными целыми числами.
-   Найти среднее арифметическое элементов в каждом столбце.
-   Дополнительно диагональ выделить разным цветом. */
+   Найти среднее арифметическое элементов в каждом столбце. */
 
 Console.Clear();
-Console.WriteLine("  Задача № 52 hard");
+Console.WriteLine("  Задача № 52");
 Console.WriteLine("  Среднее арифметическое элементов в каждом столбце:");
 
 int ReadData(string line)
@@ -43,30 +42,6 @@ void Print2DArray(int[,] arr)
     }
 }
 
-// Метод вывода на печать 2х-мерного массива с подсветкой:
-void Print2DarrColor(int [,] arr)
-{
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            if (i == j)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(arr[i, j] + "\t");
-                Console.ResetColor();
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write(arr[i, j] + "\t");
-                Console.ResetColor();
-            }
-        }
-        Console.WriteLine();
-    }
-}
-
 // Метод подсчета среднего арифметического в каждом столбце:
 void SumColum(int[,] arr)
 {
@@ -85,10 +60,9 @@ void SumColum(int[,] arr)
     }
 }
 
-
 // Запрос исходных даных и вывод результата:
 int row = ReadData("Введите количество строк: ");
 int col = ReadData("Введите количество столбцов: ");
 int[,] arr2D = Gen2DArray(row, col, 10, 99);
-Print2DarrColor(arr2D);
+Print2DArray(arr2D);
 SumColum(arr2D);

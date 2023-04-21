@@ -6,8 +6,9 @@
 
 Console.Clear();
 Console.WriteLine("  Задача 50 hard");
-Console.WriteLine("  Числа Фибоначчи в двухмерном массиве:");
+Console.WriteLine("  Поиск элемента в массиве, заполненого числами Фибоначчи:");
 
+// Метод чтения даных с консоли:
 int ReadData(string line)
 {
     Console.Write(line);
@@ -15,163 +16,100 @@ int ReadData(string line)
     return number;
 }
 
-
-// // //Метод построения чисел Фибаначи
-// // string FibNum(int num)
-// // {
-// //     string res = "0 1";
-// //     long first = 0;
-// //     long last = 1;
-
-// //     for (int i = 2; i < num; i++)
-// //     {
-// //         res = res + " " + (first + last);
-// //         (first, last) = (last, last + first);
-// //     }
-// //     return res;
-// // }
-
-//Метод заполнения 2х-мерного массива числами Фибоначчи:
-
-
-string Fibonacci(int m)
+// Метод заполнения 2х-мерного массива числами Фибоначчи :
+long[,] Fibonacci2Darr(int countRow, int countColumn)
 {
-    string res = "0 1";
+    long[,] arr = new long[countRow, countColumn];
     long first = 0;
     long last = 1;
-    for(int i = 2 ; i < m ; i++)
+    int k = 0;
+    for (int i = 0; i < countRow; i++)
     {
-        res += " "+(first + last);
-        (first,last) = (last,first + last);
+        for (int j = 0; j < countColumn; j++)
+        {
+            if (k < 2)
+            {
+                arr[0, 0] = 0;
+                arr[0, 1] = 1;
+                k++;
+            }
+            else
+            {
+                arr[i, j] = (first + last);
+                (first, last) = (last, first + last);
+            }
+        }
     }
-    return res;
+    return arr;
 }
 
+// Метод поиска элемента в 2х-мерном массиве:
+void FindElm(long[,] arr2D, int row, int col)
+{
+    if (row >= arr2D.GetLength(0) || col >= arr2D.GetLength(1))
+    {
+        Console.WriteLine("  Такова элемента нет в массиве:");
+        //return;
+    }
+    else
+    {
+        Console.WriteLine("  Ваш элемент в двухмерном массиве:");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine(arr2D[row, col]);
+        Console.ResetColor();
+        //Print2Darray(arr2D);
+        //return;
+    }
+}
 
-// // // Метод заполнения 2х-мерного массива числами :
-// // int[,] Gen2Darray(int countRow, int countColumn)
-// // {
-// //     int[,] arr = new int[countRow, countColumn];
-// //     for (int i = 2; i < countRow; i++)
-// //     {
-// //         for (int j = 0; j < countColumn; j++)
-// //         {
-// //             arr[i, j] = new Random().Next(minValue, maxValue + 1);
-// //         }
-// //     }
-// //     return arr;
-// // }
-
+// Метод вывода на печать 2х-мерного массива:
 void Print2Darray(long[,] arr)
 {
-    // ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Black,ConsoleColor.Blue,ConsoleColor.Cyan,
-    //                                     ConsoleColor.DarkBlue,ConsoleColor.DarkCyan,ConsoleColor.DarkGray,
-    //                                     ConsoleColor.DarkGreen,ConsoleColor.DarkMagenta,ConsoleColor.DarkRed,
-    //                                     ConsoleColor.DarkYellow,ConsoleColor.Gray,ConsoleColor.Green,
-    //                                     ConsoleColor.Magenta,ConsoleColor.Red,ConsoleColor.White,
-    //                                     ConsoleColor.Yellow};
-    // int row;
-    // int col;
 
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            //             if (int i == int j)
-            //             {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(arr[i, j] + " ");
+            Console.Write(arr[i, j] + "\t");
             Console.ResetColor();
-            // }
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+// Метод вывода на печать 2х-мерного массива с подсветкой:
+void Print2DarrColor(long[,] arr, int x, int y)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            if (i == x && j == y)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(arr[x, y] + "\t");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(arr[i, j] + "\t");
+                Console.ResetColor();
+            }
         }
         Console.WriteLine();
     }
 }
-string res = "";
-int m = ReadData("  Введите натуральное число:  ");
-res  = Fibonacci(m);
-Console.WriteLine(res);
-//Print2Darray(arr);
 
+// Ввод даных для генерации массива и поиска элемента в массиве:
+int row = ReadData("Введите количество строк исходного массива: ");
+int col = ReadData("Введите количество столбцов исходного массива: ");
+long[,] arr2D = Fibonacci2Darr(row, col);
 
-// //     Console.ForegroundColor = ConsoleColor.Green;
-// // Console.Write(arr[i, j] + " ");
-// // Console.ResetColor();
-// // }
-// // Console.WriteLine();
-// //     }
-// //     // Console.ForegroundColor = ConsoleColor.Yellow;
-// //     // Console.Write(arr[5, 5]);
-// //     // Console.ResetColor();
-
-// // //Метод печати 2мерного массива 
-// // void Print2Darray(int[,] arr)
-// // {
-// //     for (int i = 0; i < arr.GetLength(0); i++)
-// //     {
-// //         for (int j = 0; j < arr.GetLength(1); j++)
-// //         {
-// //             // if (i == j)
-// //             // {
-// //             //     Console.ForegroundColor = ConsoleColor.Yellow;
-// //             //     Console.Write(arr[i, j] + " ");
-// //             //     Console.ResetColor();
-// //             // }
-
-// //             Console.Write(arr[i, j] + " ");
-// //         }
-// //         Console.WriteLine();
-// //     }
-
-// // }
-
-
-
-// // void FindElm(int[,] arr2D, int row, int col)
-// // {
-// //     if (row >= arr2D.GetLength(0) || col >= arr2D.GetLength(1))
-// //     {
-// //         Console.WriteLine("  Такова элемента нет в массиве:");
-// //         //return;
-// //     }
-// //     else
-// //     {
-// //         Console.WriteLine("  Ваш элемент в двухмерном массиве:");
-// //         Console.ForegroundColor = ConsoleColor.Yellow;
-// //         Console.WriteLine(arr2D[row, col]);
-// //         //arr2D[row, col]=arr2D[row, col];
-// //         Console.ResetColor();
-// //         Print2Darray(arr2D);
-// //         //return;
-// //     }
-// // }
-
-// //int[,] arr2D_Fib = Gen2DarrayFib(5, 5);
-
-// // int row = ReadData("Введите номер строки двухмерного массива: ");
-// // int col = ReadData("Введите номер элемента в строке двухмерного массива: ");
-// // FindElm(arr2D, row, col);
-// // int x = row;
-// // int y = col;
-// // //rint2Darray(arr2D);
-// // //FindElm(arr2D, row, col);
-
-// //string res = "";
-
-
-
-
-
-
-
-// //Console.WriteLine(res);
-
-
-// // int[,] arr2D = Gen2DArray(row, col, 10, 99);
-
-// // // Вывод результата:
-// // int[] arr = Gen1DArray(lenArr, 100, 999);
-// // Console.WriteLine("Неотсортированный массив:");
-
-// //Print1Darray(arr);
-// // Priny2DArray(arr2D);
+int row0 = ReadData("Введите номер строки отыскиваемого элемента: ");
+int col0 = ReadData("Введите позицию в строке отыскиваемого элемента: ");
+FindElm(arr2D, row0, col0);
+// Print2Darray(arr2D);
+Print2DarrColor(arr2D, row0, col0);
