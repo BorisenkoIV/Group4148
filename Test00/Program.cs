@@ -1,4 +1,4 @@
-﻿
+﻿using System.Threading;
 
 // //метод печати двумерного массива
 // void Print2DArray(int[,] arr)
@@ -80,10 +80,8 @@ int ReadData(string line)
     return number;
 }
 
-
-
 // Метод вывода на печать 2х-мерного массива:
-void Print2Darr(int [,] arr)
+void Print2Darr(int[,] nums)
 {
     // ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Black,ConsoleColor.Blue,ConsoleColor.Cyan,
     //                                     ConsoleColor.DarkBlue,ConsoleColor.DarkCyan,ConsoleColor.DarkGray,
@@ -94,22 +92,58 @@ void Print2Darr(int [,] arr)
     // int row;
     // int col;
 
-    for (int i = 0; i < arr.GetLength(0); i++)
+    for (int i = 0; i < nums.GetLength(0); i++)
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
+        for (int j = 0; j < nums.GetLength(1); j++)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(arr[i, j] + "\t");
+            Console.Write(nums[i, j] + " ");
             Console.ResetColor();
+            Thread.Sleep(200);
         }
         Console.WriteLine();
     }
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.WriteLine();
+    // Console.ForegroundColor = ConsoleColor.Yellow;
+    // Console.WriteLine();
     Console.ResetColor();
 }
 
 
+//Игорь Трибелустов
+int[,] GenSpiralArray(int size)
+{
+    int[,] nums = new int[size, size];
+
+    int num = 1;
+    int i = 0;
+    int x = 0;
+
+    while (num <= size * size)
+    {
+        nums[i, x] = num;
+        if (i <= x + 1 && i + x < size - 1) ++x;
+        else if (i < x && i + x >= size - 1) ++i;
+        else if (i >= x && i + x > size - 1) --x;
+        else
+            --i;
+        ++num;
+    }
+    //Print2Darr(nums);
+    return nums;
+}
+
+//DateTime d2 = DateTime.Now;
+//int[,] arr2D = GenSpiralArray(siz);
+int N = ReadData("Введите размерность массива: ");
+GenSpiralArray(N);
+//Console.WriteLine("Pешe Ивана" + (DateTime.Now - d2));
+//Print2Darr(nums);
+
+
+// int m = ReadData("Введите количество строк: ");
+// int n = ReadData("Введите количество столбцов: ");
+// int[j] arr = Gen2DSpiralArray(m);
+// Print2DSpiralarray(arr);
 
 // // Простые числа:
 // int [,] Fib2Darr(int countRow, int countColumn)

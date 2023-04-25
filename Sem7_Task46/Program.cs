@@ -22,7 +22,7 @@ int[,] Gen2DArray(int countRow, int countColumn, int minValue, int maxValue)
     return arr;
 }
 
-void Priny2DArray(int[,] arr)
+void Print2DArray(int[,] arr)
 {
     ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Black,ConsoleColor.Blue,ConsoleColor.Cyan,
                                         ConsoleColor.DarkBlue,ConsoleColor.DarkCyan,ConsoleColor.DarkGray,
@@ -46,4 +46,4 @@ void Priny2DArray(int[,] arr)
 int row = ReadData("Введите количество строк: ");
 int col = ReadData("Введите количество столбцов: ");
 int[,] arr2D = Gen2DArray(row,col,10,99);
-Priny2DArray(arr2D);
+Print2DArray(arr2D);

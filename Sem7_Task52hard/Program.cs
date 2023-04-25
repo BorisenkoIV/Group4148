@@ -28,20 +28,20 @@ int[,] Gen2DArray(int countRow, int countColumn, int minValue, int maxValue)
     return arr;
 }
 
-// Метод вывода на печать 2х-мерного массива:
-void Print2DArray(int[,] arr)
-{
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(arr[i, j] + "\t");
-            Console.ResetColor();
-        }
-        Console.WriteLine();
-    }
-}
+// // Метод вывода на печать 2х-мерного массива:
+// void Print2DArray(int[,] arr)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             Console.ForegroundColor = ConsoleColor.Green;
+//             Console.Write(arr[i, j] + "\t");
+//             Console.ResetColor();
+//         }
+//         Console.WriteLine();
+//     }
+// }
 
 // Метод вывода на печать 2х-мерного массива с подсветкой:
 void Print2DarrColor(int [,] arr)
